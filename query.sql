@@ -31,6 +31,7 @@ where total_cost > (
 select avg(total_cost) from bookings
 );
 
+
 -- query 7
 select match_id, fixture, base_ticket_price from matches
 order by base_ticket_price desc
