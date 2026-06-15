@@ -61,21 +61,31 @@ The project includes sample data for testing:
 select match_id, fixture, base_ticket_price from matches
 where tournament_category = 'Champions League'
 and match_status = 'Available';
+
+
 2. Search Users by Name Pattern
 select user_id, full_name, email from users
 where full_name ilike 'Tanvir%'
 or full_name ilike '%Haque%';
+
+
 3. Handle NULL Payment Status
 select booking_id, user_id, match_id,
 coalesce(payment_status,'Action Required') as systematic_status
 from bookings
 where payment_status is null;
+
+
+
 🔗 Key Features
 Relational database design with foreign keys
 Proper use of PRIMARY KEY and FOREIGN KEY
 NULL handling using COALESCE
 Pattern search using ILIKE
 Real-world booking system structure
+
+
+
 🚀 How to Run
 Open PostgreSQL / MySQL (PostgreSQL recommended)
 Create a new database:
